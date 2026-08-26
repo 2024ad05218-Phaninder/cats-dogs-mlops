@@ -1,3 +1,7 @@
+# MLOps Pipeline: Cats vs Dogs Classification
+# Pinned dependencies for reproducibility
+# Generated: 2024-08-26
+
 # Core ML & Data Processing
 tensorflow==2.14.0
 numpy==1.24.3
@@ -21,12 +25,20 @@ pydantic==2.4.2
 # Testing
 pytest==7.4.3
 pytest-cov==4.1.0
+httpx==0.25.0
 
 # Utilities
 python-dotenv==1.0.0
 pyyaml==6.0.1
 requests==2.31.0
 
-# Development
+# Plotting & Visualization
+matplotlib==3.8.1
+seaborn==0.13.0
+
+# Development & Code Quality
 black==23.11.0
 flake8==6.1.0
+isort==5.12.0
+
+# Docker Health Check
