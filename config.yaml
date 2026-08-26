@@ -1,0 +1,51 @@
+# MLOps Configuration
+
+# Dataset Configuration
+dataset:
+  name: "cats_dogs"
+  source: "kaggle"  # From Kaggle
+  image_size: 224
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  augmentation: true
+
+# Model Configuration
+model:
+  name: "cats_dogs_cnn"
+  architecture: "simple_cnn"  # Options: simple_cnn, resnet50, mobilenet
+  epochs: 20
+  batch_size: 32
+  learning_rate: 0.001
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+
+# Paths
+paths:
+  data_raw: "data/raw"
+  data_processed: "data/processed"
+  models: "models"
+  logs: "logs"
+  artifacts: "artifacts"
+
+# MLflow Configuration
+mlflow:
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "cats_dogs_classification"
+  log_params: true
+  log_metrics: true
+  log_artifacts: true
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  model_path: "models/best_model.h5"
+
+# Docker Configuration
+docker:
+  registry: "docker.io"
+  image_name: "cats-dogs-inference"
+  image_tag: "latest"
+  port: 8000
