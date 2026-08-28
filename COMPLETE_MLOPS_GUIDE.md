@@ -220,7 +220,7 @@ pip install pytest-cov==4.1.0
 pip install prometheus-client
 
 # Verify installation
-python -c "import tensorflow; import fastapi; print('✅ All packages installed!')"
+python -c "import tensorflow; import fastapi; print(' All packages installed!')"
 ```
 
 ## Step 6: Test Your Setup
@@ -244,10 +244,10 @@ which python  # Should show path with 'venv' in it
 kaggle datasets list | head -5
 
 # All working? You're ready to go!
-echo "✅ Environment setup complete!"
+echo " Environment setup complete!"
 ```
 
-**Congratulations! Your environment is ready.** 🎉
+** Your environment is ready.** 
 
 Now you can proceed with the tasks below.
 
@@ -256,12 +256,6 @@ Now you can proceed with the tasks below.
 # Task 1: Project Setup
 
 **What:** Create the basic folder structure and start version control.
-
-**Time:** 10 minutes
-
-## What You're Doing
-
-You're creating an organized structure for your machine learning project so everything is in the right place.
 
 ## Steps
 
@@ -365,7 +359,7 @@ git push -u origin main
 git log --oneline | head -3
 ```
 
-**✅ Task 1 Complete!** Your project folder is ready.
+** Task 1 Complete!** Your project folder is ready.
 
 ---
 
@@ -438,7 +432,7 @@ def download_dataset():
     print("Extracting files...")
     subprocess.run(['unzip', '-q', 'data/raw/catsanddogs.zip', '-d', 'data/raw'])
     
-    print("✅ Dataset downloaded and extracted!")
+    print(" Dataset downloaded and extracted!")
 
 if __name__ == '__main__':
     download_dataset()
@@ -456,7 +450,7 @@ git commit -m "feat: Add dataset download script"
 git push origin main
 ```
 
-**✅ Task 2 Complete!** You have the dataset ready.
+** Task 2 Complete!** You have the dataset ready.
 
 ---
 
@@ -578,12 +572,12 @@ def train_model():
     
     # Evaluate
     test_loss, test_acc = model.evaluate(X_test, y_test)
-    print(f"\n✅ Test Accuracy: {test_acc*100:.2f}%")
+    print(f"\n Test Accuracy: {test_acc*100:.2f}%")
     
     # Save model
     Path('models').mkdir(exist_ok=True)
     model.save('models/best_model.h5')
-    print("✅ Model saved to models/best_model.h5")
+    print(" Model saved to models/best_model.h5")
 
 if __name__ == '__main__':
     train_model()
@@ -601,8 +595,8 @@ python src/train.py
 # - Loaded 10000 images
 # - Training model...
 # - Epoch 1/10
-# - ✅ Test Accuracy: 94.56%
-# - ✅ Model saved to models/best_model.h5
+# -  Test Accuracy: 94.56%
+# -  Model saved to models/best_model.h5
 ```
 
 ### Step 3: Verify Model Works
@@ -634,7 +628,7 @@ git commit -m "feat: Add model training script and trained model"
 git push origin main
 ```
 
-**✅ Task 3 Complete!** Your model is trained and working.
+** Task 3 Complete!** Your model is trained and working.
 
 ---
 
@@ -746,9 +740,9 @@ async def startup_event():
     global classifier
     try:
         classifier = CatsDogsClassifier('models/best_model.h5')
-        print("✅ Model loaded")
+        print(" Model loaded")
     except Exception as e:
-        print(f"❌ Failed to load model: {e}")
+        print(f" Failed to load model: {e}")
 
 @app.get("/health")
 async def health():
@@ -812,7 +806,7 @@ git commit -m "feat: Create FastAPI inference service"
 git push origin main
 ```
 
-**✅ Task 4 Complete!** Your API is running and ready to serve predictions.
+** Task 4 Complete!** Your API is running and ready to serve predictions.
 
 ---
 
@@ -880,7 +874,7 @@ EOF
 pip install -r requirements.txt
 
 # Verify
-python -c "import tensorflow; import fastapi; print('✅ All OK!')"
+python -c "import tensorflow; import fastapi; print(' All OK!')"
 ```
 
 ### Step 3: Commit
@@ -891,7 +885,7 @@ git commit -m "feat: Pin dependencies for reproducibility"
 git push origin main
 ```
 
-**✅ Task 5 Complete!** Your dependencies are locked in.
+** Task 5 Complete!** Your dependencies are locked in.
 
 ---
 
@@ -992,7 +986,7 @@ git commit -m "feat: Add Docker containerization"
 git push origin main
 ```
 
-**✅ Task 6 Complete!** Your app is containerized.
+** Task 6 Complete!** Your app is containerized.
 
 ---
 
@@ -1121,7 +1115,7 @@ git commit -m "feat: Add comprehensive unit tests"
 git push origin main
 ```
 
-**✅ Task 7 Complete!** Your code is tested.
+** Task 7 Complete!** Your code is tested.
 
 ---
 
@@ -1192,7 +1186,7 @@ git push origin main
 4. You should see your workflow running
 5. Click on it to see details
 
-**✅ Task 8 Complete!** Your code is auto-tested on every push.
+** Task 8 Complete!** Your code is auto-tested on every push.
 
 ---
 
@@ -1354,7 +1348,7 @@ git commit -m "feat: Add Docker Compose deployment stack"
 git push origin main
 ```
 
-**✅ Task 9 Complete!** Your services are running together.
+** Task 9 Complete!** Your services are running together.
 
 ---
 
@@ -1433,7 +1427,7 @@ git commit -m "feat: Add CD pipeline with automated deployment"
 git push origin main
 ```
 
-**✅ Task 10 Complete!** Your code auto-deploys after tests pass.
+** Task 10 Complete!** Your code auto-deploys after tests pass.
 
 ---
 
@@ -1516,7 +1510,7 @@ git commit -m "feat: Add comprehensive monitoring and logging"
 git push origin main
 ```
 
-**✅ Task 11 Complete!** Your API is being monitored.
+** Task 11 Complete!** Your API is being monitored.
 
 ---
 
@@ -1663,30 +1657,21 @@ ls -la models/best_model.h5
 python src/train.py
 ```
 
-## Next Steps
-
-Now you have a complete MLOps pipeline! Next:
-- **Task 12:** Create final deliverables (zip file + demo video)
-- Deploy to real servers (AWS, GCP, Azure)
-- Add more models
-- Improve accuracy
-- Add more features
-
 ---
 
 ## Summary
 
 You've built a production-ready machine learning system with:
 
-✅ **Model Training** - Deep learning CNN model
-✅ **API Server** - FastAPI for serving predictions
-✅ **Containerization** - Docker for deployment
-✅ **Testing** - Unit tests for reliability
-✅ **Continuous Integration** - Auto-testing on GitHub
-✅ **Continuous Deployment** - Auto-deployment
-✅ **Monitoring** - Prometheus + Grafana
-✅ **Logging** - Structured JSON logs
-✅ **Version Control** - Git for code management
+ **Model Training** - Deep learning CNN model
+ **API Server** - FastAPI for serving predictions
+ **Containerization** - Docker for deployment
+ **Testing** - Unit tests for reliability
+ **Continuous Integration** - Auto-testing on GitHub
+ **Continuous Deployment** - Auto-deployment
+ **Monitoring** - Prometheus + Grafana
+ **Logging** - Structured JSON logs
+ **Version Control** - Git for code management
 
 This is production-grade machine learning infrastructure!
 
